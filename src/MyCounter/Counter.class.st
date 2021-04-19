@@ -26,3 +26,29 @@ Counter >> decrement [
 Counter >> increment [ 
 	count := count + 1
 ]
+
+{ #category : #API }
+Counter >> initialize [ 
+	count := 0
+]
+
+{ #category : #'instance creation' }
+Counter >> new [ 
+	super
+]
+
+{ #category : #API }
+Counter >> printOn: aStream [ 
+	super printOn: aStream.
+	aStream nextPutAll: 'with value: ', count printString.
+]
+
+{ #category : #API }
+Counter >> self [
+	super
+]
+
+{ #category : #API }
+Counter >> startCounterAt: anInteger [
+	^ self new count: anInteger.
+]
